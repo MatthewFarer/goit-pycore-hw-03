@@ -1,0 +1,24 @@
+from datetime import datetime
+
+def get_days_from_today(date):
+    # function to calculate difference in days between today and input date
+
+    try:
+        input_date = datetime.strptime(date, '%Y-%m-%d').date()
+        # transform input date string to datetime format
+
+        today = datetime.today().date()
+        # get today's date
+
+        days_difference = today - input_date
+        # calculate the difference 
+
+        return days_difference.days
+
+    except ValueError:
+        return "Invalid date format. Please Use YYYY-MM-DD"
+    
+
+print(get_days_from_today("2021-10-09"))
+print(get_days_from_today("2026-10-09"))
+print(get_days_from_today("15.14.2021"))
