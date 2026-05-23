@@ -1,18 +1,18 @@
 from datetime import datetime
 
+# function to calculate difference in days between today and input date
 def get_days_from_today(date):
-    # function to calculate difference in days between today and input date
-
+    
     try:
-        input_date = datetime.strptime(date, '%Y-%m-%d').date()
+
         # transform input date string to datetime format
-
+        input_date = datetime.strptime(date, '%Y-%m-%d').date()
+        
         today = datetime.today().date()
-        # get today's date
-
-        days_difference = today - input_date
+        
         # calculate the difference 
-
+        days_difference = today - input_date
+        
         return days_difference.days
 
     except ValueError:
